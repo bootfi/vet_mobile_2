@@ -1,0 +1,89 @@
+name:  vet_mobile
+description: This is a vet app developed by Bootfi.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+  flutter: ">=3.0.5"
+
+# Dependencies specify other packages that your package needs in order to work.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+ # Packages that we use almost all our projects
+  sentry_flutter: # Add sentry error tracking
+  cached_network_image: # Cached network image package
+  shared_preferences: #For local caching
+  intl:  # I10n
+  http:  # Library for making HTTP requests.
+  http_interceptor:
+  pin_code_fields:  # For OTP or pin code inputs
+  freezed_annotation:
+  json_annotation: ^4.6.0
+  flutter_svg:
+  hooks_riverpod: # State management
+  firebase_core: # For notifications
+  firebase_messaging: # For notifications
+  flutter_local_notifications: # For notifications
+  platform_device_id: # For notifications
+  package_info_plus: # To get the package info
+  pull_to_refresh: ^2.0.0 # Pagination and refresh
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+# Packages that we use almost all our projects
+  build_runner:  # generate dart files
+  freezed:
+  json_serializable:
+  rename: #change package name and app name
+  flutter_launcher_icons: # Change app icon
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices.
+  flutter_lints:
+flutter_icons:
+  image_path_android: "assets/images/android_app_icon.png"
+  image_path_ios: "assets/images/ios_app_icon.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
+
+
+
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # Enable generation of localized Strings from arb files.
+  generate: false
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/config/
+
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section.
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
+    - family: Hacen Tunisia
+      fonts:
+        - asset: assets/fonts/Hacen-Tunisia-Bold.ttf
+        - asset: assets/fonts/Hacen-Tunisia-Regular.ttf
+
+
