@@ -1,0 +1,6 @@
+{
+    "env_name":"dev",
+    "api_url":"http://192.0.0.0:8080/",
+    "primary_color":"0xff0000FF",
+    "sentry_dns": "sentry key"
+}
