@@ -4,7 +4,8 @@ This is a vet app developed by Bootfi.
 
 ## Create config files
 Create `dev.json`, `prod.json` and `testing.json` using the `example_dev.json` structure.
-*Then use this*
+
+## Use this command to generate files
 ```
     flutter pub run build_runner --delete --output-conflicts
 ```
