@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart'
     show ConsumerWidget, StateProvider, WidgetRef;
+import 'package:vet_mobile/features/splash/presentaion/views/splash_view.dart';
 
 import './core/core.dart';
 import './features/notifications/notifications.dart';
@@ -37,7 +38,7 @@ class App extends ConsumerWidget {
       },
       theme: ref.watch(themeProvider),
       builder: (_, child) => _Unfocus(child: child!),
-      home: const _MainLayout(),
+      home: const SplashView(),
     );
   }
 }

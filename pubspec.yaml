@@ -35,6 +35,7 @@ dependencies:
   platform_device_id: # For notifications
   package_info_plus: # To get the package info
   pull_to_refresh: ^2.0.0 # Pagination and refresh
+  rive: ^0.9.1
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/animation/
     - assets/config/
 
 
