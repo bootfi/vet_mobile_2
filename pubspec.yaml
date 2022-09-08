@@ -74,19 +74,20 @@ flutter:
   assets:
     - assets/images/
     - assets/images/animation/
+    - assets/images/svg/
     - assets/config/
 
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section.
   fonts:
+    - family: SST Arabic
+      fonts:
+        - asset: assets/fonts/sst-arabic-bold.ttf
+        - asset: assets/fonts/sst-arabic-medium.ttf
     - family: Roboto
       fonts:
         - asset: assets/fonts/Roboto-Bold.ttf
         - asset: assets/fonts/Roboto-Regular.ttf
-    - family: Hacen Tunisia
-      fonts:
-        - asset: assets/fonts/Hacen-Tunisia-Bold.ttf
-        - asset: assets/fonts/Hacen-Tunisia-Regular.ttf
 
 

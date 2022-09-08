@@ -21,7 +21,7 @@ class LocaleNotifier extends StateNotifier<Locale?> {
 
   void defaultToDeviceLocale(Locale? locale) {
     if (locale == null) return;
-    state = state ?? locale;
+    // state = state ?? locale;
     _read(selectedLocaleProvider.notifier).state = state;
     changeLocale(locale);
   }
