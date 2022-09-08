@@ -1,0 +1,22 @@
+name: Vet-Backend Notification
+
+
+on:
+  push:
+
+
+jobs:
+  discordNotification:
+    name: Vet-Backend  Notification
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@master
+      with:
+        args: ' {{ EVENT_PAYLOAD.repository.full_name }}  -- {{ EVENT_PAYLOAD.head_commit.author.name }} just pushed to {{ EVENT_PAYLOAD.ref }}   -- {{ EVENT_PAYLOAD.head_commit.message }}'        
+
+    
+
+ 
