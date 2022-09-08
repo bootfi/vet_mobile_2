@@ -10,7 +10,7 @@ class SettingsRepo {
   Future<bool> setLocale(Locale locale) async {
     final prefs = await read(sharedPreferencesProvider.future);
     return await prefs.setString(
-        SharedPrefrenceKeys.locale.name, locale.toLanguageTag());
+        SharedPrefrenceKeys.locale.name, locale.languageCode);
   }
 
   Future<Locale?> getLocale() async {

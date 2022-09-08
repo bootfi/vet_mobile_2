@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -37,7 +39,7 @@ class OnboardingAppBar extends ConsumerWidget implements PreferredSizeWidget {
                     ),
                   ),
                   RotatedBox(
-                    quarterTurns: 2,
+                    quarterTurns: context.locale.localeName == 'en' ? 4 : 2,
                     child: SvgPicture.asset(
                       skipIcon,
                     ),

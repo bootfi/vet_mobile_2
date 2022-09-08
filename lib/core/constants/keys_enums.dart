@@ -1,1 +1,1 @@
-enum SharedPrefrenceKeys { token, locale }
+enum SharedPrefrenceKeys { token, locale, isFirst }

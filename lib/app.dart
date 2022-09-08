@@ -27,13 +27,19 @@ class App extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       locale: currentLocale,
       localeResolutionCallback: (deviceLocal, supportedLocals) {
-        if (currentLocale == null && supportedLocals.contains(deviceLocal)) {
+        if (currentLocale == null) {
           // If there is no user selected locale
           // Device's locale is the app's locale
-          ref
-              .read(currentLocaleProvider.notifier)
-              .defaultToDeviceLocale(deviceLocal);
+          for (var locale in supportedLocals) {
+            if (locale.languageCode == deviceLocal?.languageCode) {
+              ref
+                  .read(currentLocaleProvider.notifier)
+                  .defaultToDeviceLocale(deviceLocal);
+              return;
+            }
+          }
         }
+
         return null;
       },
       theme: ref.watch(themeProvider),

@@ -17,5 +17,13 @@ extension ContextExtensions on BuildContext {
     );
   }
 
+  void pushReplacment(Widget page) {
+    Navigator.of(this).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => page,
+      ),
+    );
+  }
+
   void pop() => Navigator.pop(this);
 }

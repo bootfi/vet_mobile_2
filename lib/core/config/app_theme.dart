@@ -12,19 +12,20 @@ class ThemeNotifier extends StateNotifier<ThemeData?> {
   final Ref ref;
   void init() async {
     final config = await ref.watch(configurationsProvider.future);
+    final primaryColor = Color(int.parse(config.primaryColor));
     if (ref.watch(isLocaleArProvider)) {
-      state = _theme('Hacen Tunisia', config.primaryColor);
+      state = _theme('SST Arabic', primaryColor);
       debugPrint('in ar');
     } else {
-      state = _theme('Roboto', config.primaryColor);
+      state = _theme('Roboto', primaryColor);
       debugPrint('in en');
     }
   }
 
   final _baseTheme = ThemeData.light();
-  ThemeData _theme(String fontFamily, String primaryColor) => ThemeData(
+  ThemeData _theme(String fontFamily, Color primaryColor) => ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.green,
+        primaryColor: primaryColor,
         textTheme: _baseTheme.textTheme.apply(
           fontFamily: fontFamily,
         ),
@@ -32,8 +33,8 @@ class ThemeNotifier extends StateNotifier<ThemeData?> {
           fontFamily: fontFamily,
         ),
         colorScheme: _baseTheme.colorScheme.copyWith(
-          primary: Colors.green,
-          secondary: Colors.orange,
+          primary: primaryColor,
+          secondary: kSecondrayColor,
           background: Colors.white,
         ),
         appBarTheme: _baseTheme.appBarTheme.copyWith(
