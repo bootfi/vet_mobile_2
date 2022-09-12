@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../../core/core.dart';
+import '../../../auth/auth.dart';
 import '../../onboarding.dart';
 
 class OnboardingAppBar extends ConsumerWidget implements PreferredSizeWidget {
@@ -24,7 +23,7 @@ class OnboardingAppBar extends ConsumerWidget implements PreferredSizeWidget {
           InkWell(
             onTap: () {
               ref.read(onboardingProvider.notifier).setIsFirst();
-              // TODO : add navigation
+              context.pushReplacment(LoginView());
             },
             child: Padding(
               padding: const EdgeInsetsDirectional.only(end: 15),

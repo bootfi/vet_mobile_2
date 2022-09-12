@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart'
     show Ref, StateNotifier, StateNotifierProvider;
 
-import '../../features/settings/settings.dart';
 import '../core.dart';
 
 class ThemeNotifier extends StateNotifier<ThemeData?> {
@@ -13,13 +12,8 @@ class ThemeNotifier extends StateNotifier<ThemeData?> {
   void init() async {
     final config = await ref.watch(configurationsProvider.future);
     final primaryColor = Color(int.parse(config.primaryColor));
-    if (ref.watch(isLocaleArProvider)) {
-      state = _theme('SST Arabic', primaryColor);
-      debugPrint('in ar');
-    } else {
-      state = _theme('Roboto', primaryColor);
-      debugPrint('in en');
-    }
+    state = _theme('SST Arabic', primaryColor);
+    debugPrint('in ar');
   }
 
   final _baseTheme = ThemeData.light();

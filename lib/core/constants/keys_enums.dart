@@ -1,1 +1,3 @@
-enum SharedPrefrenceKeys { token, locale, isFirst }
+enum SharedPrefrenceKeys { token, locale, isFirst, userModel }
+
+enum RequestStatus { init, loading, sucess, error }

@@ -1,22 +1,28 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rive/rive.dart';
 import '../../../../core/core.dart';
+import '../../../auth/auth.dart';
 import '../../../onboarding/presentaion/views/onboarding_view.dart';
 
-class SplashView extends StatefulWidget {
+class SplashView extends ConsumerStatefulWidget {
   const SplashView({Key? key}) : super(key: key);
 
   @override
-  State<SplashView> createState() => _SplashViewState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> {
+class _SplashViewState extends ConsumerState<SplashView> {
+  late final bool showOnboard;
   @override
   void initState() {
-    Timer(const Duration(milliseconds: 2500),
-        (() => context.pushReplacment(const OnboardingView())));
+    checkIsFirst();
+    Timer(
+        const Duration(milliseconds: 2500),
+        (() => context.pushReplacment(
+            showOnboard ? const OnboardingView() : LoginView())));
     super.initState();
   }
 
@@ -31,5 +37,10 @@ class _SplashViewState extends State<SplashView> {
         ),
       ),
     );
+  }
+
+  checkIsFirst() async {
+    final prefs = await ref.read(sharedPreferencesProvider.future);
+    showOnboard = prefs.getBool(SharedPrefrenceKeys.isFirst.name) ?? true;
   }
 }

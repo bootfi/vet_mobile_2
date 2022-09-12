@@ -17,7 +17,7 @@ class OnboardingView extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset(appLogo),
+            SvgPicture.asset(appLogo, width: 60),
             const SizedBox(
               height: 30,
             ),

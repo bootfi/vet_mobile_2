@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'dart:math' as math;
 import '../../../../core/core.dart';
+import '../../../auth/auth.dart';
 import '../../onboarding.dart';
 
 class OnboardingButton extends ConsumerWidget {
@@ -36,7 +37,10 @@ class OnboardingButton extends ConsumerWidget {
                 ? () {
                     ref.read(onboardingProvider.notifier).onPageChanged(null);
                   }
-                : () {},
+                : () {
+                    ref.read(onboardingProvider.notifier).setIsFirst();
+                    context.pushReplacment(LoginView());
+                  },
             child: Icon(
               ref.watch(onboardingProvider) != 3
                   ? Icons.arrow_forward_ios_rounded
