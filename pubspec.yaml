@@ -36,6 +36,7 @@ dependencies:
   package_info_plus: # To get the package info
   pull_to_refresh: ^2.0.0 # Pagination and refresh
   rive: ^0.9.1
+  flutter_styled_toast: ^2.1.3
 
 dev_dependencies:
   flutter_test:

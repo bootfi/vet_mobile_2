@@ -11,7 +11,8 @@ class SettingsView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final auth = ref.watch(authProvider);
+    // final auth = ref.watch(authProvider);
+    final auth = false;
     final isLocaleAr = ref.watch(isLocaleArProvider);
     final currentLocale = ref.watch(currentLocaleProvider);
     final notifications = ref.watch(notificationsStateNotifierProvider);
@@ -142,7 +143,7 @@ class SettingsView extends ConsumerWidget {
                     //logout
                   } else {
                     context.push(
-                      const LoginView(),
+                      LoginView(),
                     );
                   }
                 },

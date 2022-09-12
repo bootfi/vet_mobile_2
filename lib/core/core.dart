@@ -4,3 +4,4 @@ export './extensions/extensions.dart';
 export './providers.dart';
 export './utils/utils.dart';
 export './widgets/widgets.dart';
+export './models/models.dart';

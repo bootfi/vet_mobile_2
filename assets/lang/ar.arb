@@ -16,5 +16,22 @@
     "ourAppText":"نص عن التطبيق",
     "notifications":"الإشعارات",
     "developedBy":"طور بواسطة :",
-    "skip":"  تجاهل  "
+    "skip":"  تجاهل  ",
+    "login":"تسجيل الدخول",
+    "emailOrPhone":"البريد الإلكتروني / رقم الهاتف",
+    "password":"كلمة المرور",
+    "forgetPassword":"هل نسيت كلمة المرور ؟",
+    "newUser":"مستتخدم جديد ؟ ",
+    "createAccount":"إنشاء حساب",
+    "emailRequired":"البريد الإلكتروني مطلوب",
+    "passwordRequired":"كلمة المرور مطلوب",
+    "emailValidation":"البريد الإلكتروني غير صحيح",
+    "passwordValidation":"كلمة المرور لايجب ان تكون أقل من 6 حروف",
+    "passwordTooLong":"كلمة المرور يجب أن لاتكون أكثر من 18 حرف",
+    "errorMessage":"حدث خطأ، يرجى إعادة المحاولة"
+
+
+    
+
+
 }

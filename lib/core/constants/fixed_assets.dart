@@ -14,3 +14,6 @@ const onBoarding2 = '${_svg}onboarding_2.svg';
 const onBoarding3 = '${_svg}onboarding_3.svg';
 const onBoarding4 = '${_svg}onboarding_4.svg';
 const onBoardingTexture = '${_svg}onboarding_texture.svg';
+const loginImage = '${_svg}login_image.svg';
+const successToastIcon = '${_svg}success_toast_icon.svg';
+const errorToastIcon = '${_svg}error_toast_icon.svg';
