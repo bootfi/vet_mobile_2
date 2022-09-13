@@ -9,6 +9,7 @@ class ResponseModel with _$ResponseModel {
     required final bool success,
     required final String message,
     required final dynamic data,
+    // ignore: invalid_annotation_target
     @JsonKey(name: 'status_code') required final int statusCode,
   }) = _ResponseModel;
 

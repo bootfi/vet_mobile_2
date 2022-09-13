@@ -18,7 +18,6 @@
     "developedBy":"طور بواسطة :",
     "skip":"  تجاهل  ",
     "login":"تسجيل الدخول",
-    "emailOrPhone":"البريد الإلكتروني / رقم الهاتف",
     "password":"كلمة المرور",
     "forgetPassword":"هل نسيت كلمة المرور ؟",
     "newUser":"مستتخدم جديد ؟ ",
@@ -28,10 +27,22 @@
     "emailValidation":"البريد الإلكتروني غير صحيح",
     "passwordValidation":"كلمة المرور لايجب ان تكون أقل من 6 حروف",
     "passwordTooLong":"كلمة المرور يجب أن لاتكون أكثر من 18 حرف",
-    "errorMessage":"حدث خطأ، يرجى إعادة المحاولة"
-
-
-    
-
-
+    "errorMessage":"حدث خطأ، يرجى إعادة المحاولة",
+    "fullName":"الاسم الكامل",
+    "gender":"الجنس",
+    "male":"ذكر",
+    "female":"أنثى",
+    "address":"العنوان",
+    "passwordConfirmation":"تأكيد كلمة المرور",
+    "alreadyHaveAccount":"هل لديك حساب بالفعل ؟  ",
+    "email":"البريد الإلكتروني",
+    "phone":"رقم الهاتف",
+    "phoneNumberValidation":"أدخل 9 أرقام",
+    "phoneNumberMustStartWith":"رقم الهاتف يجب أن يبدأ بـ5",
+    "conPasswordRequired":"تأكيد كلمة المرور مطلوب",
+    "passwordNotMatch":"كلمة المرور غير متطابقة",
+    "addressRequired":"العنوان مطلوب",
+    "addressTooShort":"العنوان يجب أن يكون أكثر من 4 أحرف",
+    "fullNameValidation":"الاسم الكامل مطلوب",
+    "fullNameTooShort":"الاسم يجب أن يكون أكثر من 3 أحرف"
 }
