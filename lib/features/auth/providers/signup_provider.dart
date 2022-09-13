@@ -1,25 +1,19 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import '../../../core/core.dart';
 import '../auth.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart' show Provider, Reader;
 
-class LoginProvider {
-  LoginProvider(this.read) : _repo = read(authRepoProvider);
+class SignupProvider {
+  SignupProvider(this.read) : _repo = read(authRepoProvider);
   final Reader read;
   final AuthRepo _repo;
-  userLogin(String email, String password) async {
+  userSignup(SignupModel signupModel) async {
     try {
       read(requestStatusProvider.notifier).update(
           (state) => RequestStatusModel(requestStatus: RequestStatus.loading));
-      final loginBody = {"email": email, "password": password};
-      final result = await _repo.userLogin(loginBody);
+      final signupBody = signupModel.toJson();
+      final result = await _repo.userSignup(signupBody);
       if (result.success) {
-        final userModel = UserModel.fromJson(result.data);
-        final prefs = await read(sharedPreferencesProvider.future);
-        prefs.setString(
-            SharedPrefrenceKeys.userModel.name, jsonEncode(userModel.toJson()));
         read(requestStatusProvider.notifier).update((state) =>
             RequestStatusModel(
                 requestStatus: RequestStatus.sucess, message: result.message));
@@ -36,6 +30,6 @@ class LoginProvider {
   }
 }
 
-final loginProvider = Provider<LoginProvider>((ref) {
-  return LoginProvider(ref.read);
+final signupProvider = Provider<SignupProvider>((ref) {
+  return SignupProvider(ref.read);
 });

@@ -2,6 +2,16 @@ import 'package:flutter/cupertino.dart';
 import './../core.dart';
 
 class ValidationMixin {
+  String? validateFullName(String? val, BuildContext context) {
+    if (val == null || val.trim().isEmpty) {
+      return context.locale.fullNameValidation;
+    } else if (val.length < 3) {
+      return context.locale.fullNameTooShort;
+    } else {
+      return null;
+    }
+  }
+
   String? validateRequiredEmail(String? val, BuildContext context) {
     if (val == null || val.isEmpty) {
       return context.locale.emailRequired;
@@ -23,6 +33,39 @@ class ValidationMixin {
       return context.locale.passwordValidation;
     } else if (val.length > 18) {
       return context.locale.passwordTooLong;
+    } else {
+      return null;
+    }
+  }
+
+  String? validatePhoneNumber(String? val, BuildContext context) {
+    if (val!.length < 9) {
+      return context.locale.phoneNumberValidation;
+    } else if (!val.startsWith('5')) {
+      return context.locale.phoneNumberMustStartWith;
+    } else {
+      return null;
+    }
+  }
+
+  String? validateConfirmPassword(
+      String? val, String password, BuildContext context) {
+    if (val!.trim().isEmpty) {
+      return context.locale.conPasswordRequired;
+    } else if (val.length < 6) {
+      return context.locale.passwordValidation;
+    } else if (val != password) {
+      return context.locale.passwordNotMatch;
+    } else {
+      return null;
+    }
+  }
+
+  String? validateAddress(String? val, BuildContext context) {
+    if (val == null || val.trim().isEmpty) {
+      return context.locale.addressRequired;
+    } else if (val.length <= 4) {
+      return context.locale.addressTooShort;
     } else {
       return null;
     }

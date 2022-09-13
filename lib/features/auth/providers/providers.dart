@@ -5,3 +5,4 @@
 // });
 
 export './login_provider.dart';
+export './signup_provider.dart';
