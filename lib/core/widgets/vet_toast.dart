@@ -28,7 +28,7 @@ showVetToast(RequestStatusModel requestStatusModel, BuildContext context) {
       ),
       context: context,
       position: StyledToastPosition.top,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 4),
       animDuration: const Duration(milliseconds: 200),
       animation: StyledToastAnimation.slideFromTop,
       reverseAnimation: StyledToastAnimation.slideFromTop,

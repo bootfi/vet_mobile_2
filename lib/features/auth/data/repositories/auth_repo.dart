@@ -25,6 +25,22 @@ class AuthRepo {
     final result = ResponseModel.fromJson(data);
     return result;
   }
+
+  Future<ResponseModel> userSignup(Map<String, dynamic> body) async {
+    final apiUrl = await _ref.watch(
+      configurationsProvider.future.select(
+        (config) async {
+          return (await config).apiUrl;
+        },
+      ),
+    );
+    final locale = "?locale=${_ref.read(currentLocaleProvider)!.languageCode}";
+    final url = '$apiUrl$customerSignup$locale';
+    final response = await http.post(Uri.parse(url), body: body);
+    final data = json.decode(response.body);
+    final result = ResponseModel.fromJson(data);
+    return result;
+  }
 }
 
 final authRepoProvider = Provider<AuthRepo>((ref) {
