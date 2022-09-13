@@ -18,7 +18,7 @@ class CustomRichText extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: title,
-          style: context.textTheme.bodyMedium,
+          style: context.textTheme.bodySmall!.copyWith(color: Colors.black),
           children: [
             TextSpan(
                 text: clickableText,

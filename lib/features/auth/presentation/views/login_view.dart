@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../providers/providers.dart';
-import '../widgets/widgets.dart';
+import '../../auth.dart';
 import './../../../../core/core.dart';
 import 'package:flutter_hooks/flutter_hooks.dart' show useTextEditingController;
 
@@ -68,13 +67,15 @@ class LoginView extends HookConsumerWidget with ValidationMixin {
                         padding: const EdgeInsets.symmetric(vertical: 20),
                         child: VetTextFormField(
                           controller: emailController,
-                          hintText: context.locale.emailOrPhone,
+                          hintText:
+                              '${context.locale.email} / ${context.locale.phone}',
                           validator: (email) =>
                               validateRequiredEmail(email, context),
                         ),
                       ),
                       VetTextFormField(
                         controller: passwordController,
+                        obscureText: true,
                         hintText: context.locale.password,
                         validator: (password) =>
                             validatePassword(password, context),
@@ -105,7 +106,9 @@ class LoginView extends HookConsumerWidget with ValidationMixin {
                       CustomRichText(
                         title: context.locale.newUser,
                         clickableText: context.locale.createAccount,
-                        onClick: () {},
+                        onClick: () {
+                          context.pushReplacment(SignupView());
+                        },
                       ),
                       const SizedBox(
                         height: 70,
