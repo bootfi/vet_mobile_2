@@ -41,6 +41,22 @@ class AuthRepo {
     final result = ResponseModel.fromJson(data);
     return result;
   }
+
+  Future<ResponseModel> otpVerification(String otp) async {
+    final apiUrl = await _ref.watch(
+      configurationsProvider.future.select(
+        (config) async {
+          return (await config).apiUrl;
+        },
+      ),
+    );
+    final locale = "?locale=${_ref.read(currentLocaleProvider)!.languageCode}";
+    final url = '$apiUrl$verifyOtp$otp$locale';
+    final response = await http.post(Uri.parse(url));
+    final data = json.decode(response.body);
+    final result = ResponseModel.fromJson(data);
+    return result;
+  }
 }
 
 final authRepoProvider = Provider<AuthRepo>((ref) {
