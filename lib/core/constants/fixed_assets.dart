@@ -17,3 +17,4 @@ const onBoardingTexture = '${_svg}onboarding_texture.svg';
 const loginImage = '${_svg}login_image.svg';
 const successToastIcon = '${_svg}success_toast_icon.svg';
 const errorToastIcon = '${_svg}error_toast_icon.svg';
+const otpVerification = '${_svg}otp_verification.svg';

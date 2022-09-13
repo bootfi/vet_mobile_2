@@ -44,5 +44,9 @@
     "addressRequired":"Address is required",
     "addressTooShort":"Address must be at least 5 chars",
     "fullNameValidation":"Full name is required",
-    "fullNameTooShort":"Full name must be at least 3 chars"
+    "fullNameTooShort":"Full name must be at least 3 chars",
+    "enterOTP":"Enter the verification code",
+    "enterOTPSentToYou":"Enter the verification code sent to you ",
+    "continu":"Continue",
+    "otpValidation":"Please enter four numbers ."
 }
