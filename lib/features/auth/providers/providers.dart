@@ -6,3 +6,4 @@
 
 export './login_provider.dart';
 export './signup_provider.dart';
+export './otp_provider.dart';

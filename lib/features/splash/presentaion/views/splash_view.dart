@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rive/rive.dart';
 import '../../../../core/core.dart';
-import '../../../auth/auth.dart';
+import '../../../auth/presentation/views/login_view.dart';
 import '../../../onboarding/presentaion/views/onboarding_view.dart';
 
 class SplashView extends ConsumerStatefulWidget {

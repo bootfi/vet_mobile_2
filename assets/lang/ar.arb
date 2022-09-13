@@ -44,5 +44,9 @@
     "addressRequired":"العنوان مطلوب",
     "addressTooShort":"العنوان يجب أن يكون أكثر من 4 أحرف",
     "fullNameValidation":"الاسم الكامل مطلوب",
-    "fullNameTooShort":"الاسم يجب أن يكون أكثر من 3 أحرف"
+    "fullNameTooShort":"الاسم يجب أن يكون أكثر من 3 أحرف",
+    "enterOTP":"ادخل رمز التحقق",
+    "enterOTPSentToYou":"ادخل رمز التحقق المرسل إليك ",
+    "continu":"متابعة",
+    "otpValidation":"الرجاء إدخال اربعة ارقام"
 }

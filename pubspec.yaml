@@ -24,7 +24,7 @@ dependencies:
   intl:  # I10n
   http:  # Library for making HTTP requests.
   http_interceptor:
-  pin_code_fields:  # For OTP or pin code inputs
+  pin_code_fields: ^7.4.0
   freezed_annotation:
   json_annotation: ^4.6.0
   flutter_svg:

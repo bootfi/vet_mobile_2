@@ -24,6 +24,9 @@ class SignupView extends HookConsumerWidget with ValidationMixin {
       if (currentStatus.requestStatus == RequestStatus.error ||
           currentStatus.requestStatus == RequestStatus.sucess) {
         showVetToast(currentStatus, context);
+        if (currentStatus.requestStatus == RequestStatus.sucess) {
+          context.pushReplacment(OTPView());
+        }
       }
     });
     return SlidingAnimation(

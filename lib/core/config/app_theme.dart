@@ -20,6 +20,7 @@ class ThemeNotifier extends StateNotifier<ThemeData?> {
   ThemeData _theme(String fontFamily, Color primaryColor) => ThemeData(
         brightness: Brightness.light,
         primaryColor: primaryColor,
+        scaffoldBackgroundColor: kSecondrayColor,
         textTheme: _baseTheme.textTheme.apply(
           fontFamily: fontFamily,
         ),
