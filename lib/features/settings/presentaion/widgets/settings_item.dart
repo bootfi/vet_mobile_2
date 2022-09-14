@@ -25,12 +25,14 @@ class SettingsItem extends StatelessWidget {
             ? context.screenSize.width * 0.048
             : 0.0,
       ),
-      leading: Text(title,
-          style: context.textTheme.bodyText2!.copyWith(
-            color: const Color(0xff484848),
-            fontWeight: FontWeight.w500,
-            fontSize: 16.0,
-          )),
+      leading: Text(
+        title,
+        style: context.textTheme.bodyText2!.copyWith(
+          color: const Color(0xff484848),
+          fontWeight: FontWeight.w500,
+          fontSize: 16.0,
+        ),
+      ),
       trailing: SizedBox(
         width: context.screenSize.width * 0.31,
         child: Row(

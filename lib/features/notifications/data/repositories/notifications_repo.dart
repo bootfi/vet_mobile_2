@@ -74,7 +74,7 @@ class NotificationsRepo {
   ///handle fcm notification settings (sound,badge..etc)
   Future<void> _setupFcmNotificationSettings() async {
     //iOS Configuration
-    _messaging.setForegroundNotificationPresentationOptions(
+    await _messaging.setForegroundNotificationPresentationOptions(
       alert: true,
       sound: true,
       badge: true,
@@ -92,8 +92,8 @@ class NotificationsRepo {
   }
 
   Future<void> _showMessage(RemoteMessage message) async {
-    RemoteNotification? notification = message.notification;
-    AndroidNotification? android = message.notification?.android;
+    final RemoteNotification? notification = message.notification;
+    final AndroidNotification? android = message.notification?.android;
     // AppleNotification? apple = notification?.apple;
     debugPrint('Message data: ${message.data}');
 
@@ -108,7 +108,7 @@ class NotificationsRepo {
       android: androidNotificationDetails,
       iOS: iOSPlatformChannelSpecifics,
     );
-    _flutterLocalNotificationsPlugin.show(
+    await _flutterLocalNotificationsPlugin.show(
       notification.hashCode,
       notification?.title,
       notification?.body,
@@ -129,7 +129,7 @@ class NotificationsRepo {
   }
 
   Future<List<String>> _deviceIdAndToken() async {
-    String deviceId = await PlatformDeviceId.getDeviceId ?? '';
+    final String deviceId = await PlatformDeviceId.getDeviceId ?? '';
     String fcmToken = '';
     fcmToken = await _messaging.getToken() ?? '';
 
@@ -137,10 +137,10 @@ class NotificationsRepo {
   }
 
   Future<void> _initFlutterLocalNotifications() async {
-    var initializationSettingsAndroid =
-        const AndroidInitializationSettings('mipmap/ic_launcher');
-    var initializationSettingsIOS = const IOSInitializationSettings();
-    var initializationSettings = InitializationSettings(
+    const initializationSettingsAndroid =
+        AndroidInitializationSettings('mipmap/ic_launcher');
+    const initializationSettingsIOS = IOSInitializationSettings();
+    const initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
       iOS: initializationSettingsIOS,
     );
