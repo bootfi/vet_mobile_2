@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import './../../../../core/core.dart';
 
 class PhoneNumberField extends StatefulWidget {
@@ -62,8 +63,9 @@ class _PhoneNumberFieldState extends State<PhoneNumberField>
                 contentPadding:
                     const EdgeInsetsDirectional.fromSTEB(13, 12, 0, 12),
                 enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0XFFcdcdcd))),
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: Color(0XFFcdcdcd)),
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),

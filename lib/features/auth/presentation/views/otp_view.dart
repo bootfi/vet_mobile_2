@@ -1,10 +1,10 @@
-import 'package:flutter_hooks/flutter_hooks.dart' show useTextEditingController;
-
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart' show useTextEditingController;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:vet_mobile/features/auth/auth.dart';
+
 import '../../../../core/core.dart';
 
 class OTPView extends HookConsumerWidget {
@@ -51,8 +51,10 @@ class OTPView extends HookConsumerWidget {
                   style: context.textTheme.headline5!
                       .copyWith(color: context.theme.colorScheme.primary),
                 ),
-                Text(context.locale.enterOTPSentToYou,
-                    style: context.textTheme.bodySmall),
+                Text(
+                  context.locale.enterOTPSentToYou,
+                  style: context.textTheme.bodySmall,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Form(
@@ -92,9 +94,9 @@ class OTPView extends HookConsumerWidget {
                 VetButton(
                   title: context.locale.continu,
                   loading: requestStatus.requestStatus == RequestStatus.loading,
-                  onPressed: () {
+                  onPressed: () async {
                     if (otpFormKey.currentState!.validate()) {
-                      ref.read(otpProvider).verifyOTP(otpController.text);
+                      await ref.read(otpProvider).verifyOTP(otpController.text);
                     }
                   },
                 )

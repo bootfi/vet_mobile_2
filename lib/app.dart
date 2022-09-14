@@ -30,7 +30,7 @@ class App extends ConsumerWidget {
         if (currentLocale == null) {
           // If there is no user selected locale
           // Device's locale is the app's locale
-          for (var locale in supportedLocals) {
+          for (final locale in supportedLocals) {
             if (locale.languageCode == deviceLocal?.languageCode) {
               ref
                   .read(currentLocaleProvider.notifier)

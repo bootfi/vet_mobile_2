@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/core.dart';
 
 class GenderSelector extends StatefulWidget {
@@ -83,19 +84,22 @@ class GenderRadioButton extends StatelessWidget {
             Container(
               margin: const EdgeInsetsDirectional.only(end: 8, top: 5),
               decoration: BoxDecoration(
-                  border: Border.all(
-                      color: genderType == selectedGender
-                          ? context.theme.colorScheme.primary
-                          : Colors.black),
-                  borderRadius: BorderRadius.circular(10)),
+                border: Border.all(
+                  color: genderType == selectedGender
+                      ? context.theme.colorScheme.primary
+                      : Colors.black,
+                ),
+                borderRadius: BorderRadius.circular(10),
+              ),
               padding: const EdgeInsets.all(2),
               child: genderType == selectedGender
                   ? Container(
                       height: 7,
                       width: 7,
                       decoration: BoxDecoration(
-                          color: context.theme.colorScheme.primary,
-                          shape: BoxShape.circle),
+                        color: context.theme.colorScheme.primary,
+                        shape: BoxShape.circle,
+                      ),
                     )
                   : const SizedBox(
                       height: 7,

@@ -1,6 +1,9 @@
+import 'dart:async';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'dart:math' as math;
+
 import '../../../../core/core.dart';
 import '../../../auth/auth.dart';
 import '../../onboarding.dart';
@@ -34,11 +37,15 @@ class OnboardingButton extends ConsumerWidget {
           child: InkWell(
             splashColor: Colors.transparent,
             onTap: ref.read(onboardingProvider) != 3
-                ? () {
-                    ref.read(onboardingProvider.notifier).onPageChanged(null);
+                ? () async {
+                    await ref
+                        .read(onboardingProvider.notifier)
+                        .onPageChanged(null);
                   }
                 : () {
-                    ref.read(onboardingProvider.notifier).setIsFirst();
+                    unawaited(
+                      ref.read(onboardingProvider.notifier).setIsFirst(),
+                    );
                     context.pushReplacment(LoginView());
                   },
             child: Icon(
@@ -84,8 +91,13 @@ class MyPainter extends CustomPainter {
       ..strokeWidth = strokeWidth
       ..style = PaintingStyle.stroke;
 
-    canvas.drawArc(Rect.fromCircle(center: circleCenter, radius: circleRadius),
-        -math.pi / 2, 2 * math.pi * (progress * 0.25), false, arcPaint);
+    canvas.drawArc(
+      Rect.fromCircle(center: circleCenter, radius: circleRadius),
+      -math.pi / 2,
+      2 * math.pi * (progress * 0.25),
+      false,
+      arcPaint,
+    );
   }
 
   @override
