@@ -17,10 +17,11 @@ class LanguageModalBottomSheet extends ConsumerWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-              color: Color(0x29000000),
-              offset: Offset(0, -6),
-              blurRadius: 26,
-              spreadRadius: 0)
+            color: Color(0x29000000),
+            offset: Offset(0, -6),
+            blurRadius: 26,
+            spreadRadius: 0,
+          )
         ],
       ),
       child: Column(

@@ -12,7 +12,7 @@ class SettingsView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     // final auth = ref.watch(authProvider);
-    final auth = false;
+    bool auth = true;
     final isLocaleAr = ref.watch(isLocaleArProvider);
     final currentLocale = ref.watch(currentLocaleProvider);
     final notifications = ref.watch(notificationsStateNotifierProvider);
@@ -39,8 +39,8 @@ class SettingsView extends ConsumerWidget {
                     key: const Key('Language'),
                     title: context.locale.language,
                     trailing: codeToLanguage(currentLocale?.languageCode ?? ''),
-                    onTap: () {
-                      showModalBottomSheet<dynamic>(
+                    onTap: () async {
+                      await showModalBottomSheet<dynamic>(
                         context: context,
                         barrierColor: Colors.transparent,
                         backgroundColor: Colors.transparent,
@@ -135,12 +135,14 @@ class SettingsView extends ConsumerWidget {
               height: 53,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary: const Color(0xfff1f1f1),
-                    elevation: 0.0,
-                    shape: const ContinuousRectangleBorder()),
+                  backgroundColor: const Color(0xfff1f1f1),
+                  elevation: 0.0,
+                  shape: const ContinuousRectangleBorder(),
+                ),
                 onPressed: () {
                   if (auth) {
                     //logout
+                    auth = false;
                   } else {
                     context.push(
                       LoginView(),

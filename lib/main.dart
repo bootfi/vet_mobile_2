@@ -19,14 +19,19 @@ Future<void> main() async {
   }
 
 //Info for Sentry
-  PackageInfo packageInfo = await PackageInfo.fromPlatform();
-  String version = packageInfo.version;
-  String appName = packageInfo.appName;
+  final packageInfo = await PackageInfo.fromPlatform();
+  final version = packageInfo.version;
+  final appName = packageInfo.appName;
   appVersion = version;
 //Use UncontrolledProvider instead ProviderScope to initialize
 // some services at start.
   final container = ProviderContainer();
   // read the services you want to be pre-initialized
+  //
+  //default to 'prod' if in release mode
+  if (kReleaseMode) {
+    container.read(serverProvider.notifier).state = 'prod';
+  }
   container.read(notificationsStateNotifierProvider);
   final config = await container.read(configurationsProvider.future);
   container.read(currentLocaleProvider.notifier).getLocale();
