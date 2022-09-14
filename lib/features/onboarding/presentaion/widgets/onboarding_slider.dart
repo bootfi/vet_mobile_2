@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import '../../../../core/core.dart';
 import '../../onboarding.dart';
 
@@ -47,8 +48,8 @@ class _OnboardingSliderState extends ConsumerState<OnboardingSlider> {
         ref.read(onboardingProvider.notifier).pageController;
     return PageView.builder(
       controller: sliderController,
-      onPageChanged: (pageIndex) {
-        ref.read(onboardingProvider.notifier).onPageChanged(pageIndex);
+      onPageChanged: (pageIndex) async {
+        await ref.read(onboardingProvider.notifier).onPageChanged(pageIndex);
       },
       itemCount: _onboardingItems.length,
       itemBuilder: (context, index) => Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart' show TapGestureRecognizer;
 import 'package:flutter/material.dart';
+
 import '../../../../core/core.dart';
 
 class CustomRichText extends StatelessWidget {
@@ -21,10 +22,11 @@ class CustomRichText extends StatelessWidget {
           style: context.textTheme.bodySmall!.copyWith(color: Colors.black),
           children: [
             TextSpan(
-                text: clickableText,
-                style: context.textTheme.bodyLarge!
-                    .copyWith(color: context.theme.colorScheme.primary),
-                recognizer: TapGestureRecognizer()..onTap = onClick),
+              text: clickableText,
+              style: context.textTheme.bodyLarge!
+                  .copyWith(color: context.theme.colorScheme.primary),
+              recognizer: TapGestureRecognizer()..onTap = onClick,
+            ),
           ],
         ),
       ),

@@ -8,21 +8,27 @@ class OnboardingNotifier extends StateNotifier<int> {
   final Ref ref;
   PageController pageController = PageController(initialPage: 0);
 
-  onPageChanged(int? index) {
+  Future<void> onPageChanged(int? index) async {
     if (index != null) {
       state = index;
-      pageController.animateToPage(index,
-          duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+      await pageController.animateToPage(
+        index,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeIn,
+      );
     } else {
       state += 1;
-      pageController.animateToPage(state,
-          duration: const Duration(milliseconds: 800), curve: Curves.easeIn);
+      await pageController.animateToPage(
+        state,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeIn,
+      );
     }
   }
 
-  setIsFirst() async {
+  Future<void> setIsFirst() async {
     final prefs = await ref.read(sharedPreferencesProvider.future);
-    prefs.setBool(SharedPrefrenceKeys.isFirst.name, false);
+    await prefs.setBool(SharedPrefrenceKeys.isFirst.name, false);
   }
 }
 

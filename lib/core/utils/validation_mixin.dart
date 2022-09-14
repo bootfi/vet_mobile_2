@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import './../core.dart';
 
 class ValidationMixin {
@@ -49,7 +50,10 @@ class ValidationMixin {
   }
 
   String? validateConfirmPassword(
-      String? val, String password, BuildContext context) {
+    String? val,
+    String password,
+    BuildContext context,
+  ) {
     if (val!.trim().isEmpty) {
       return context.locale.conPasswordRequired;
     } else if (val.length < 6) {

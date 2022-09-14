@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '/core/core.dart';
 
 class VetTextFormField extends StatelessWidget {
@@ -29,8 +30,9 @@ class VetTextFormField extends StatelessWidget {
         errorStyle: const TextStyle(height: 1),
         contentPadding: const EdgeInsetsDirectional.fromSTEB(13, 12, 0, 12),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0XFFcdcdcd))),
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(color: Color(0XFFcdcdcd)),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),

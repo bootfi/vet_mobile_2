@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart' show useTextEditingController;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../auth.dart';
+
 import './../../../../core/core.dart';
-import 'package:flutter_hooks/flutter_hooks.dart' show useTextEditingController;
+import '../../auth.dart';
 
 class LoginView extends HookConsumerWidget with ValidationMixin {
   LoginView({Key? key}) : super(key: key);
@@ -85,7 +86,8 @@ class LoginView extends HookConsumerWidget with ValidationMixin {
                         child: Text(
                           context.locale.forgetPassword,
                           style: context.textTheme.bodySmall!.copyWith(
-                              color: context.theme.colorScheme.primary),
+                            color: context.theme.colorScheme.primary,
+                          ),
                         ),
                       ),
                       Padding(
@@ -93,11 +95,12 @@ class LoginView extends HookConsumerWidget with ValidationMixin {
                         child: VetButton(
                           loading: requestStatus.requestStatus ==
                               RequestStatus.loading,
-                          onPressed: () {
+                          onPressed: () async {
                             if (loginFormKey.currentState!.validate()) {
-                              ref.read(loginProvider).userLogin(
-                                  emailController.text,
-                                  passwordController.text);
+                              await ref.read(loginProvider).userLogin(
+                                    emailController.text,
+                                    passwordController.text,
+                                  );
                             }
                           },
                           title: context.locale.login,
