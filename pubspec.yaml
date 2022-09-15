@@ -47,13 +47,13 @@ dev_dependencies:
   freezed:
   json_serializable:
   rename: #change package name and app name
-  flutter_launcher_icons: # Change app icon
+  flutter_launcher_icons: ^0.10.0 # Change app icon
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices.
   flutter_lints:
 flutter_icons:
-  image_path_android: "assets/images/app_icon.png"
-  image_path_ios: "assets/images/ios_app_icon.png"
+  image_path_android: "assets/images/png/app_icon.png"
+  image_path_ios: "assets/images/png/ios_app_icon.png"
   android: true
   ios: true
   remove_alpha_ios: true
